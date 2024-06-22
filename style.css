@@ -348,7 +348,7 @@ section#popup hr {
 }
 section#popup div.eta {
   margin-left: 2em;
-  width: 80%;
+  width: 90%;
   /* background-color: purple; */
   display: flex;
   align-items: center;
@@ -356,7 +356,7 @@ section#popup div.eta {
 section#popup div.eta div {
   margin-left: 2em;
   /* font-weight: bold; */
-  font-size: 1.05em;
+  font-size: 1em;
   /* background-color: yellow; */
 }
 section#popup div.eta span {
@@ -525,9 +525,6 @@ input:-webkit-autofill:focus {
   }
   #keypad {
     max-width: 600px;
-  }
-  section#popup {
-    max-width: 560px;
   }
 }
 
