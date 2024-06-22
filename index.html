@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KMB ETA</title>
+    <link href="./style.css" rel="stylesheet" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&family=Noto+Sans+TC:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+  </head>
+  <body>
+    <main id="whole">
+      <!-- Logo -->
+      <img
+        src="https://www.hk2050isnow.org/wp-content/uploads/2021/05/KMB_300x200.png"
+      />
+
+      <!-- Introduction, icon -->
+      <header>
+        <div>
+          <h2>到站時間</h2>
+          <p>請輸入巴士路線號碼</p>
+        </div>
+        <div>
+          <img
+            src="https://play-lh.googleusercontent.com/M8q3UWGb7LhaCViShhXX9BZus7BSdVMEJfNFDdnpwWL7a4XCYPp7V_we4eXg9Yb5do0"
+          />
+        </div>
+      </header>
+
+      <!-- Input bus number from user -->
+      <div id="inputBox">
+        <input type="text" name="bus" placeholder="<請輸入巴士號碼>" id="bus" />
+        <button id="inputBtn">搜尋路線</button>
+      </div>
+
+      <!-- Bus route select -->
+      <section id="route">
+        <!-- <button>
+          <p>元朗</p>
+          <svg
+            class="w-6 h-6"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"  
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+              d="m19 9-7 7-7-7"
+            />
+          </svg>
+          <p>觀塘</p>
+        </button> -->
+        <!-- <div>
+          <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m6 6 12 12m3-6a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+          </svg>
+          <span>呢條線消失左WO!</span>
+        </div> -->
+      </section>
+
+      <section id="routeList">
+        <!-- <button>
+          <h3>
+            619
+          </h3>
+          <p>
+            順利
+          </p>
+        </button>
+        <button>
+          <h3>
+            619
+          </h3>
+          <p>
+            順利
+          </p>
+        </button>
+        <button>
+          <h3>
+            619
+          </h3>
+          <p>
+            順利
+          </p>
+        </button> -->
+      </section>
+      <section id="keypad">
+        <div id="numpad">
+          <div class="numpad-row">
+            <button class="numpad-key">7</button>
+            <button class="numpad-key">8</button>
+            <button class="numpad-key">9</button>
+          </div>
+          <div class="numpad-row">
+            <button class="numpad-key">4</button>
+            <button class="numpad-key">5</button>
+            <button class="numpad-key">6</button>
+          </div>
+          <div class="numpad-row">
+            <button class="numpad-key">1</button>
+            <button class="numpad-key">2</button>
+            <button class="numpad-key">3</button>
+          </div>
+          <div class="numpad-row">
+            <button class="numpad-key">取消</button>
+            <button class="numpad-key">0</button>
+            <button class="numpad-key">Del</button>
+          </div>
+        </div>
+        <div id="letterpad">
+          <button class="letterpad-key">A</button>
+          <button class="letterpad-key">B</button>
+          <button class="letterpad-key">C</button>
+          <button class="letterpad-key">E</button>
+          <button class="letterpad-key">H</button>
+          <button class="letterpad-key">K</button>
+          <button class="letterpad-key">N</button>
+          <button class="letterpad-key">P</button>
+          <button class="letterpad-key">R</button>
+          <button class="letterpad-key">S</button>
+          <button class="letterpad-key">T</button>
+          <button class="letterpad-key">W</button>
+          <button class="letterpad-key">X</button>
+          <svg
+            class="w-6 h-6"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+              d="m19 9-7 7-7-7"
+            />
+          </svg>
+        </div>
+      </section>
+
+      <!-- <section id="popup">
+          <div id="header">
+            <div id="etaTitle">
+              <h2>觀塘車站</h2>
+              <p>預計到達時間</p>
+            </div>
+            <button><svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+            </svg></button>
+
+            
+          </div>
+          
+          <hr>
+          <div class="eta">
+            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+            </svg>
+            <div>
+              14:56
+            </div>
+            <span>
+              原定班次
+            </span>
+          </div>
+
+           <div class="vl"></div>
+          
+          <div class="eta">
+            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+            </svg>
+            <div>
+              14:56
+            </div>
+            <span>
+              原定班次
+            </span>
+          </div>
+
+           <div class="vl"></div>
+
+         
+          <div class="eta">
+            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+            </svg>
+            <div>
+              14:56
+            </div>
+            <span>
+              原定班次
+            </span>
+          </div>
+        </section> -->
+
+      <div
+        id="selected"
+        style="position: absolute; padding: 10px; display: none"
+      ></div>
+      <div id="overlay"></div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
