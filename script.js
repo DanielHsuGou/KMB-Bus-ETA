@@ -351,6 +351,7 @@ function noETA() {
   const etaLabelSpan = document.createElement("span");
   etaLabelSpan.textContent = "暫時沒有預定班次";
   etaLabelSpan.style.backgroundColor = "red";
+  etaLabelSpan.style.marginLeft = "0";
 
   etaDiv.appendChild(etaLabelSpan);
   popupSection.appendChild(etaDiv);
