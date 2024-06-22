@@ -230,6 +230,7 @@ section#routeList button {
 
 section#routeList button h3 {
   width: 15%;
+  max-width: 65px;
   text-align: center;
   background-color: #b30000;
   border-radius: 10px;
@@ -373,7 +374,7 @@ section#popup div.eta span {
   border-left: 6px solid #ffffff;
   opacity: 0.5;
   height: 8%;
-  width: 84%;
+  width: 83%;
   margin-top: 1%;
   margin-bottom: 1%;
   margin: 0 auto;
@@ -519,6 +520,18 @@ input:-webkit-autofill:focus {
 #overlay.active {
   opacity: 1;
   pointer-events: all;
+}
+
+@media only screen and (min-width: 480px) {
+  main {
+    max-width: 600px;
+  }
+  #keypad {
+    max-width: 600px;
+  }
+  .vl {
+    width: 84%;
+  }
 }
 
 @media only screen and (min-width: 600px) {
