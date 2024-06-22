@@ -356,13 +356,13 @@ section#popup div.eta {
 section#popup div.eta div {
   margin-left: 2em;
   /* font-weight: bold; */
-  font-size: 1.1em;
+  font-size: 1.05em;
   /* background-color: yellow; */
 }
 section#popup div.eta span {
   margin-left: 2em;
   /* font-weight: bold; */
-  font-size: 1.05em;
+  font-size: 1em;
   /* background-color: #eb6a00; */
   text-align: center;
   padding: 0.3em;
@@ -527,7 +527,7 @@ input:-webkit-autofill:focus {
     max-width: 600px;
   }
   section#popup {
-    max-width: 600px;
+    max-width: 560px;
   }
 }
 
