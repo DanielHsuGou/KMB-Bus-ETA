@@ -24,7 +24,8 @@ main {
   -o-background-size: cover;
   background-size: cover;
   object-fit: cover;
-  min-width: 28rem;
+  background-attachment: fixed;
+  min-width: 25rem;
   max-width: 30rem;
   min-height: 100vh;
   margin: 0 auto;
@@ -408,7 +409,7 @@ section#popup div.eta span {
   display: none;
   flex-direction: row;
   height: 40vh;
-  min-width: 30rem;
+  min-width: 28rem;
   max-width: 30rem;
   justify-content: space-evenly;
   align-items: flex-start;
