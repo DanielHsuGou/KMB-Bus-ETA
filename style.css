@@ -373,10 +373,12 @@ section#popup div.eta span {
   border-left: 6px solid #ffffff;
   opacity: 0.5;
   height: 8%;
+  width: 84%;
   margin-top: 1%;
   margin-bottom: 1%;
-  margin-left: 7.7%;
-  border-radius: 10px;
+  margin: 0 auto;
+  /* margin-left: 7.7%; */
+  /* border-radius: 10px; */
 }
 
 @keyframes keypadDisplay {
