@@ -251,8 +251,8 @@ section#routeList button p {
 section#popup {
   z-index: 10;
   position: fixed;
-  top: 25%;
-  width: 25em;
+  top: 20%;
+  max-width: 540px;
   height: 25em;
   border: 1px solid #1e3a45;
   display: flex;
@@ -532,7 +532,7 @@ input:-webkit-autofill:focus {
     max-width: 768px;
   }
   #keypad {
-    max-width: 768px;
+    max-width: 640px;
   }
   body {
     background: url("https://img.freepik.com/premium-photo/travel-by-bus-train-night-weather-conditions-fog-double-exposure-abstract-background-digital-illustration_124507-104208.jpg")
