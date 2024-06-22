@@ -347,16 +347,16 @@ section#popup hr {
   margin-bottom: 40px;
 }
 section#popup div.eta {
-  margin-left: 2em;
   width: 90%;
   /* background-color: purple; */
   display: flex;
   align-items: center;
+  margin: 0 auto;
 }
 section#popup div.eta div {
   margin-left: 2em;
   /* font-weight: bold; */
-  font-size: 1em;
+  font-size: 1.05em;
   /* background-color: yellow; */
 }
 section#popup div.eta span {
@@ -375,7 +375,7 @@ section#popup div.eta span {
   height: 8%;
   margin-top: 1%;
   margin-bottom: 1%;
-  margin-left: 2.85em;
+  margin-left: 7.7%;
   border-radius: 10px;
 }
 
