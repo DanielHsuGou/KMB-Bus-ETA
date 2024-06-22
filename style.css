@@ -64,7 +64,7 @@ img[src*="we4eXg9Yb5do0"] {
   width: 80%;
   height: 7vh;
   position: relative;
-  margin: 3%;
+  margin: 1%;
   /* background-color: red; */
 }
 
@@ -92,9 +92,10 @@ input {
 
 #selected {
   opacity: 0.3;
-  background-color: #84adb8;
+  background-color: rgb(232, 250, 255);
   /* border-radius: 20px; */
   transition: all 0.3s ease;
+  border: 3px solid rgb(18, 10, 90);
 }
 
 section {
@@ -127,7 +128,7 @@ section button {
   align-items: center;
   align-content: center;
   /* flex-wrap: wrap; */
-  margin: 1%;
+  margin: 0.5%;
   background-color: #03071e;
   padding: 0.5em;
   /* width: 15%; */
@@ -160,9 +161,13 @@ section#route div span {
 }
 
 section#route button p {
-  writing-mode: vertical-rl;
+  /* writing-mode: vertical-rl; */
   font-size: 0.9em;
   /* background-color: red; */
+}
+
+section#route button {
+  height: 2em;
 }
 
 section button::before,
@@ -204,7 +209,7 @@ section#routeList {
   align-content: flex-start;
   width: 80%;
   height: 45vh;
-  margin-top: 3%;
+  margin-top: 1%;
   border-radius: 10px;
   overflow: scroll;
   overflow-y: hidden;
@@ -259,7 +264,7 @@ section#popup {
   background: linear-gradient(
     342deg,
     rgb(11, 140, 162) 0%,
-    rgba(16, 21, 47) 31%
+    rgb(26, 37, 59) 31%
   );
   border-radius: 10px;
   box-shadow: 2px 2px 1px 0px rgb(13, 17, 18, 0.75);
@@ -348,8 +353,8 @@ section#popup div.eta {
 }
 section#popup div.eta div {
   margin-left: 2em;
-  font-weight: bold;
-  font-size: 1.3em;
+  /* font-weight: bold; */
+  font-size: 1.1em;
   /* background-color: yellow; */
 }
 section#popup div.eta span {
@@ -372,6 +377,19 @@ section#popup div.eta span {
   border-radius: 10px;
 }
 
+@keyframes keypadDisplay {
+  0% {
+    position: fixed;
+    bottom: -200px;
+    opacity: 0;
+  }
+  100% {
+    position: fixed;
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
 /* keypad */
 #keypad {
   position: fixed;
@@ -382,7 +400,7 @@ section#popup div.eta span {
     rgba(8, 78, 102, 1) 0%,
     rgba(16, 21, 47, 1) 24%
   );
-  border: 5px solid #1d2e37;
+  border: 1px solid #1d2e37;
   z-index: 10;
   /* flex */
   /* display: flex; */
@@ -396,6 +414,7 @@ section#popup div.eta span {
   align-items: flex-start;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
+  animation: keypadDisplay 0.3s ease-in-out;
 }
 
 #keypad button {
@@ -453,21 +472,21 @@ section#popup div.eta span {
 
 /* Scroll bar */
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
+  /* box-shadow: inset 0 0 5px grey; */
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: red;
+  background: rgb(49, 61, 85);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b30000;
+  background: #3d63aa;
 }
 
 /* autofill color */

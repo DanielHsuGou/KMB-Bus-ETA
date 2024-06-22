@@ -5,6 +5,7 @@ const input = document.getElementById("bus");
 const inputBtn = document.getElementById("inputBtn");
 const selectedBtn = document.getElementById("selected");
 const overlay = document.getElementById("overlay");
+const keypad = document.getElementById("keypad");
 
 function createErrorMessage() {
   // Create the container div
@@ -124,9 +125,8 @@ const returnRoute = async (busNo) => {
           if (activeButton) {
             // updateSelectedBtn(activeButton);
             const buttonRect = activeButton.getBoundingClientRect();
-            selectedBtn.style.left =
-              buttonRect.left + window.scrollX - 5 + "px";
-            selectedBtn.style.top = buttonRect.top + window.scrollY - 5 + "px";
+            selectedBtn.style.left = buttonRect.left + window.scrollX + "px";
+            selectedBtn.style.top = buttonRect.top + window.scrollY + "px";
           }
         });
 
@@ -156,8 +156,8 @@ const updateSelectedBtn = (button) => {
   const buttonRect = button.getBoundingClientRect();
 
   // Update the position and size of the following element
-  selectedBtn.style.left = buttonRect.left + window.scrollX - 5 + "px";
-  selectedBtn.style.top = buttonRect.top + window.scrollY - 5 + "px";
+  selectedBtn.style.left = buttonRect.left + window.scrollX + "px";
+  selectedBtn.style.top = buttonRect.top + window.scrollY + "px";
   selectedBtn.style.width = buttonRect.width + "px";
   selectedBtn.style.height = buttonRect.height + "px";
   selectedBtn.style.display = "block";
@@ -234,10 +234,11 @@ function returnETA(busNo, stopID, serviceType, bound) {
         // Display 1 to 3 eta
         for (let i = 0; i < etaSeq.length; i++) {
           if (etaSeq[i].eta !== null && i < 3) {
-            let time = etaSeq[i].eta.split("").indexOf("T") + 1;
+            // let time = etaSeq[i].eta.split("").indexOf("T") + 1;
             // console.log(time)
             createPopupETA(
-              etaSeq[i].eta.slice(time, time + 5),
+              // etaSeq[i].eta.slice(time, time + 5),
+              etaSeq[i].eta,
               etaSeq[i].rmk_tc
             );
             if (i < etaSeq.length - 1 && i < 2) {
@@ -256,7 +257,7 @@ function returnETA(busNo, stopID, serviceType, bound) {
           div.remove();
         });
         // display if eta not exist
-        createPopupETA("", "暫時沒有預定班次");
+        noETA();
       }
     })
     .catch((error) => {
@@ -340,6 +341,21 @@ function createPopupSection(bustopName) {
   }
 }
 
+function noETA() {
+  let popupSection = document.getElementById("popup");
+
+  const etaDiv = document.createElement("div");
+  etaDiv.className = "eta";
+  etaDiv.style.justifyContent = "center";
+
+  const etaLabelSpan = document.createElement("span");
+  etaLabelSpan.textContent = "暫時沒有預定班次";
+  etaLabelSpan.style.backgroundColor = "red";
+
+  etaDiv.appendChild(etaLabelSpan);
+  popupSection.appendChild(etaDiv);
+}
+
 function createPopupETA(time, shift) {
   let popupSection = document.getElementById("popup");
 
@@ -367,7 +383,26 @@ function createPopupETA(time, shift) {
   etaSvg.appendChild(etaPath);
 
   const etaTimeDiv = document.createElement("div");
-  etaTimeDiv.textContent = time;
+  let arriveTimeStamp = time.slice(
+    time.split("").indexOf("T") + 1,
+    time.split("").indexOf("T") + 6
+  );
+
+  etaTimeDiv.textContent = arriveTimeStamp;
+
+  const etaRemainTimeDiv = document.createElement("div");
+  let currentTime = new Date();
+  let arriveTime = new Date(time.slice(0, time.split("").indexOf("+")));
+  let difMilsec = arriveTime.getTime() - currentTime.getTime();
+  let difMinute = Math.floor(difMilsec / (1000 * 60));
+  if (difMinute < 0) {
+    difMinute = 0;
+  }
+  // console.log(difMinute.toString().length);
+  if (difMinute.toString().length === 1) {
+    etaRemainTimeDiv.style.paddingLeft = "11px";
+  }
+  etaRemainTimeDiv.textContent = difMinute + "分鐘";
 
   const etaLabelSpan = document.createElement("span");
   etaLabelSpan.textContent = shift;
@@ -378,11 +413,12 @@ function createPopupETA(time, shift) {
     etaLabelSpan.textContent = "實時班次";
     etaLabelSpan.style.backgroundColor = "#b30000";
   } else {
-    etaLabelSpan.style.backgroundColor = "#b30000";
+    etaLabelSpan.style.backgroundColor = "red";
   }
 
   etaDiv.appendChild(etaSvg);
   etaDiv.appendChild(etaTimeDiv);
+  etaDiv.appendChild(etaRemainTimeDiv);
   etaDiv.appendChild(etaLabelSpan);
 
   popupSection.appendChild(etaDiv);
@@ -429,3 +465,37 @@ input.addEventListener("keyup", function (event) {
 //   input.value = input.value.toUpperCase()
 //   returnRoute(input.value)
 // }
+
+input.addEventListener("focus", function () {
+  keypad.style.display = "flex";
+});
+
+document.addEventListener("click", (event) => {
+  if (!keypad.contains(event.target) && event.target !== input) {
+    keypad.style.display = "none";
+  }
+});
+
+const numkeys = document.querySelectorAll(".numpad-key");
+
+numkeys.forEach((key) => {
+  key.addEventListener("click", () => {
+    const value = key.textContent;
+    if (value === "Enter") {
+      inputBtn.click();
+    } else if (value === "Clear") {
+      input.value = "";
+    } else {
+      input.value += value;
+    }
+  });
+});
+
+const letterkeys = document.querySelectorAll(".letterpad-key");
+
+letterkeys.forEach((key) => {
+  key.addEventListener("click", () => {
+    const value = key.textContent;
+    input.value += value;
+  });
+});
