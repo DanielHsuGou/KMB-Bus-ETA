@@ -251,8 +251,9 @@ section#routeList button p {
 section#popup {
   z-index: 10;
   position: fixed;
-  top: 25%;
-  width: 25em;
+  top: 20%;
+  max-width: 540px;
+  width: 100%;
   height: 25em;
   border: 1px solid #1e3a45;
   display: flex;
@@ -343,7 +344,7 @@ section#popup h2 {
 section#popup hr {
   width: 100%;
   opacity: 0.5;
-  margin-bottom: 10%;
+  margin-bottom: 40px;
 }
 section#popup div.eta {
   margin-left: 2em;
@@ -523,6 +524,9 @@ input:-webkit-autofill:focus {
     max-width: 600px;
   }
   #keypad {
+    max-width: 600px;
+  }
+  section#popup {
     max-width: 600px;
   }
 }
