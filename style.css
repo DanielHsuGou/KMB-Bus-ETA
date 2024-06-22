@@ -409,7 +409,7 @@ section#popup div.eta span {
   display: none;
   flex-direction: row;
   height: 40vh;
-  min-width: 20rem;
+  min-width: 23rem;
   max-width: 30rem;
   justify-content: space-evenly;
   align-items: flex-start;
